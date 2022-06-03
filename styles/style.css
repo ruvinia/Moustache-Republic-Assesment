@@ -1,0 +1,191 @@
+/* COLORS */
+/* BREAKPOINTS */
+* {
+  box-sizing: border-box;
+}
+body {
+  -webkit-font-smoothing: subpixel-antialiased;
+  font-family: "Trirong", serif;
+  margin: 0;
+}
+.asterick {
+  color: #C90000;
+}
+.error-msg {
+  color: #C90000;
+  display: none;
+}
+.visible {
+  display: inline-block;
+}
+main {
+  padding: 0 15px;
+  width: 100%;
+}
+main nav {
+  background-color: #F6F6F7;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  display: flex;
+  width: 100%;
+}
+main nav .mini-cart-wrapper {
+  text-align: center;
+  width: 100px;
+  z-index: 1;
+}
+main nav .mini-cart-wrapper.active {
+  border: solid 1px #CCCCCC;
+  border-bottom: solid 1px #FFFFFF;
+  background-color: #FFFFFF;
+}
+main nav .cart-container {
+  border: solid 1px #CCCCCC;
+  background-color: #FFFFFF;
+  position: absolute;
+  padding: 20px;
+  display: none;
+  width: 300px;
+  right: 30px;
+  z-index: 0;
+  top: 39px;
+}
+main nav .cart-container .product-container {
+  margin-bottom: 20px;
+}
+main nav .cart-container .product-container .product-image {
+  float: left;
+  width: 48%;
+}
+main nav .cart-container .product-container .product-details {
+  text-align: left;
+  float: right;
+  width: 48%;
+}
+main nav .cart-container .product-container .product-details .product-title {
+  font-size: 14px;
+}
+main nav .cart-container .product-container .product-details .product-price {
+  border: none;
+  font-size: 14px;
+}
+main nav .cart-container .product-container .product-details .product-size {
+  text-transform: capitalize;
+  font-size: 14px;
+}
+main nav .cart-container .product-container .product-details .product-size .selected-size {
+  margin-left: 5px;
+}
+main nav .cart-container.visible {
+  display: inline-block;
+}
+main .product-container {
+  display: flex;
+  flex-direction: column;
+}
+main .product-container .product-image {
+  width: 100%;
+}
+main .product-container .product-image img {
+  width: 100%;
+}
+main .product-container .product-details {
+  flex-direction: column;
+  display: flex;
+  width: 100%;
+}
+main .product-container .product-details .product-title {
+  color: #222222;
+  font-size: 28px;
+}
+main .product-container .product-details .product-price {
+  border-bottom: solid 1px #CCCCCC;
+  border-top: solid 1px #CCCCCC;
+  color: #222222;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 10px 0;
+  display: none;
+}
+main .product-container .product-details .product-price.visible {
+  display: inline-block;
+}
+main .product-container .product-details .product-size {
+  color: #888888;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+main .product-container .product-details .product-size .selected-size {
+  margin-left: 10px;
+}
+main .product-container .product-details .product-size-container {
+  flex-direction: row;
+  display: flex;
+  padding: 0;
+}
+main .product-container .product-details .product-size-container li {
+  border: solid 1px #CCCCCC;
+  color: #888888;
+  text-transform: uppercase;
+  text-align: center;
+  margin-right: 10px;
+  list-style: none;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 10px;
+  height: 50px;
+  width: 50px;
+}
+main .product-container .product-details .product-size-container li:hover {
+  border: solid 1px #222222;
+  color: #888888;
+}
+main .product-container .product-details .product-size-container li.selected {
+  border: solid 2px #222222;
+}
+main .product-container .product-details p {
+  color: #888888;
+  letter-spacing: 1px;
+  line-height: 18px;
+  font-size: 14px;
+}
+main .product-container .product-details button.tocart {
+  border: solid 1px #222222;
+  color: #222222;
+  transition: 0.2s;
+  font-weight: 800;
+  margin-top: 20px;
+  max-width: 175px;
+  padding: 10px 0;
+  cursor: pointer;
+}
+main .product-container .product-details button.tocart:hover {
+  background: #222222;
+  color: #FFFFFF;
+}
+/* For large screens - - - - - - - - - - */
+@media only screen and (min-width: 481px) {
+  main {
+    padding: 0 15px;
+    width: 100%;
+  }
+  main .product-container {
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 0 auto;
+    display: flex;
+    width: 80%;
+  }
+  main .product-container .product-image {
+    float: left;
+    width: 48%;
+  }
+  main .product-container .product-details {
+    float: right;
+    width: 48%;
+  }
+}
+/* For tablets - - - - - - - - - - - - - */
+/* For small screens - - - - - - - - - - - - - */
+/* For large screens: - - - - - - - - - - - - - */

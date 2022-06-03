@@ -1,0 +1,266 @@
+/* COLORS */
+@primary-bg-color: @color-gray-light0;
+
+@primary-txt-color: @color-gray-dark;
+@secondary-txt-color: @color-gray-light2;
+
+@primary-border-color: @color-gray-light1;
+@secondary-border-color: @color-gray-dark;
+
+@color-gray-light0: #F6F6F7;
+@color-gray-light1: #CCCCCC;
+@color-gray-light2: #888888;
+@color-gray-dark: #222222;
+@color-white: #FFFFFF;
+@color-red: #C90000;
+
+/* BREAKPOINTS */
+@screen__s: 480px;
+@screen__m: 768px;
+@screen__l: 1024px;
+
+// - - - - - - - - - - - - - - - - - - - - - - */
+
+
+* {
+   box-sizing: border-box;
+ }
+ 
+ body {
+   -webkit-font-smoothing: subpixel-antialiased;
+   font-family: "Trirong", serif;
+   margin: 0;
+ }
+
+ .asterick { 
+   color: @color-red;
+   }
+
+.error-msg {
+   color: @color-red;
+   display: none;
+}
+
+.visible {
+   display: inline-block;
+}
+
+
+// Common - - - - - - - - - - - - - - - */
+
+main {
+   padding: 0 15px;
+   width: 100%;
+
+   nav {
+      background-color: @primary-bg-color;
+      justify-content: flex-end;       
+      margin-bottom: 20px;
+      padding: 10px 15px; 
+      display: flex;          
+      width: 100%; 
+
+      .mini-cart-wrapper {         
+         text-align: center;
+         width: 100px;  
+         z-index: 1; 
+   
+         &.active {         
+            border: solid 1px @primary-border-color;
+            border-bottom: solid 1px @color-white;  
+            background-color: @color-white;
+         }
+      }
+
+      .cart-container {
+         border: solid 1px @primary-border-color;
+         background-color: @color-white;
+         position: absolute;            
+         padding: 20px;
+         display: none;
+         width: 300px;
+         right: 30px;
+         z-index: 0;
+         top: 39px;
+
+         .product-container {
+            margin-bottom: 20px;
+
+            .product-image {
+               float: left;
+               width: 48%;
+            }
+         
+            .product-details {
+               text-align: left;
+               float: right;
+               width: 48%;
+         
+               .product-title {
+                  font-size: 14px;
+               }
+         
+               .product-price { 
+                  border: none;  
+                  font-size: 14px;
+               }
+         
+               .product-size {           
+                  text-transform: capitalize;
+                  font-size: 14px;
+         
+                  .selected-size {
+                     margin-left: 5px; 
+                  }
+               }
+            }
+         }        
+
+         &.visible {
+            display: inline-block;
+         }
+      }
+   }   
+
+   .product-container {
+      display: flex;
+      flex-direction: column;
+
+      .product-image {
+         width: 100%;
+
+         img {
+            width: 100%;
+         }
+      }
+
+      .product-details {
+         flex-direction: column;
+         display: flex;
+         width: 100%;
+
+         .product-title {
+            color: @primary-txt-color;
+            font-size: 28px;
+         }
+
+         .product-price {           
+            border-bottom: solid 1px @primary-border-color;
+            border-top: solid 1px @primary-border-color;
+            color: @primary-txt-color;  
+            font-weight: bold;
+            font-size: 18px;
+            padding: 10px 0;
+            display: none;
+
+            &.visible {
+               display: inline-block;
+            }
+         }
+
+         .product-size {           
+            color: @secondary-txt-color;
+            text-transform: uppercase;
+            font-size: 14px;
+
+            .selected-size {
+               margin-left: 10px; 
+            }
+         }
+
+         .product-size-container { 
+            flex-direction: row;
+            display: flex;
+            padding: 0;
+
+            li {
+               border: solid 1px @primary-border-color;
+               color: @secondary-txt-color;
+               text-transform: uppercase;  
+               text-align: center;
+               margin-right: 10px;
+               list-style: none;
+               cursor: pointer;
+               font-size: 14px;
+               padding: 10px;               
+               height: 50px;
+               width: 50px;
+
+               &:hover {
+                  border: solid 1px @secondary-border-color;
+                  color: @secondary-txt-color;
+               }
+
+               &.selected {
+                  border: solid 2px @secondary-border-color;
+               }
+            }
+         }
+
+
+         p {
+            color: @secondary-txt-color;
+            letter-spacing: 1px;
+            line-height: 18px;
+            font-size: 14px;
+         }
+
+         button.tocart {
+            border: solid 1px @secondary-border-color;
+            color: @primary-txt-color; 
+            transition: 0.2s; 
+            font-weight: 800;          
+            margin-top: 20px;
+            max-width: 175px;
+            padding: 10px 0;
+            cursor: pointer;
+
+            &:hover {
+               background:  @secondary-border-color;
+               color: @color-white;
+            }
+         }
+
+      }
+   }
+}
+
+/* For large screens - - - - - - - - - - */
+@media only screen and (min-width: (@screen__s + 1)) {
+   main {
+      padding: 0 15px;
+      width: 100%;   
+  
+      .product-container {   
+         justify-content: space-between;
+         flex-direction: row;         
+         margin: 0 auto;
+         display: flex;
+         width: 80%;
+   
+         .product-image {
+            float: left;
+            width: 48%;
+         }
+   
+         .product-details {
+            float: right;
+            width: 48%;
+         }
+      }
+   }
+}
+
+/* For tablets - - - - - - - - - - - - - */
+@media only screen and (min-width: (@screen__s + 1)) and (max-width: @screen__m) {
+}
+
+/* For small screens - - - - - - - - - - - - - */
+@media only screen and (min-width: (@screen__m + 1)) and (max-width: @screen__l) {
+}
+
+/* For large screens: - - - - - - - - - - - - - */
+@media only screen and (min-width: @screen__l) {
+}
+
+
